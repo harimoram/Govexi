@@ -1,0 +1,84 @@
+.hex-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #18BC9C;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 0;
+  transition: all 0.4s ease;
+  text-decoration: none;
+}
+
+.hex-button .button-text {
+  text-decoration: none;
+}
+
+/* Moving glowing border using pseudo-element */
+.hex-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  padding: 2px;
+  background: linear-gradient(
+    90deg,
+    #18BC9C,
+    #2C3E50,
+    #18BC9C
+  );
+  background-size: 300% 100%;
+  background-position: 0% 50%;
+  animation: borderMove 5s linear infinite;
+  z-index: -2;
+  mask: 
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+}
+
+/* Shine streak inside the button */
+.hex-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+  transform: skewX(-20deg);
+  transition: all 0.4s ease;
+  z-index: 1;
+}
+
+.hex-button:hover::after {
+  left: 130%;
+  transition: all 0.5s ease;
+}
+
+.hex-button:hover {
+  background-color: #2C3E50;
+  color: #fff;
+  box-shadow: 0 0 4px #18BC9C, 0 0 12px #18BC9C;
+}
+
+/* Border flows continuously left to right */
+@keyframes borderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}

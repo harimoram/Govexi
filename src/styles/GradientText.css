@@ -1,0 +1,47 @@
+/*
+  Adjusted styles for .animated-gradient-text to only apply a gradient to the text
+  without any background, border, or button-like container effects.
+*/
+.animated-gradient-text {
+  position: relative; /* Needed for z-index on child if used */
+  display: inline-block; /* Allows it to flow with text */
+  max-width: fit-content; /* Ensures it only takes up content width */
+  font-weight: 500; /* Retain font weight */
+  overflow: hidden; /* Keep overflow hidden to contain the gradient animation */
+  /* Removed:
+     - margin, flex properties (as it's now inline-block)
+     - border-radius, backdrop-filter, transition, box-shadow (for container effects)
+     - cursor: pointer (already commented out)
+  */
+}
+
+/*
+  The .gradient-overlay and its ::before pseudo-element are entirely removed
+  as they were responsible for the background and border of the container.
+*/
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.text-content {
+  display: inline-block; /* Essential for background-clip: text to work */
+  position: relative; /* Needed for z-index */
+  z-index: 2; /* Ensures text is above any potential background elements */
+  background-size: 300% 100%; /* Defines the size of the gradient background */
+  background-clip: text; /* Clips the background to the shape of the text */
+  -webkit-background-clip: text; /* Webkit prefix for compatibility */
+  color: transparent; /* Makes the text transparent so the background gradient shows through */
+  animation: gradient linear infinite; /* Applies the gradient animation */
+  pointer-events: none; /* Ensures the text itself is not interactive */
+}

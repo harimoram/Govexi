@@ -1,0 +1,81 @@
+.hero-glow-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #2C3E50;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 0;
+  box-shadow: 0 0 4px #18BC9C, 0 0 12px #18BC9C;
+  transition: all 0.3s ease;
+}
+
+/* Hover: remove background and change text to green */
+.hero-glow-button:hover {
+  background-color: transparent;
+  color: #18BC9C;
+}
+
+/* Click (active) effect */
+.hero-glow-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 0 2px #18BC9C, 0 0 8px #18BC9C;
+}
+
+/* Glowing animated border */
+.hero-glow-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  padding: 2px;
+  background: linear-gradient(90deg, #18BC9C, #2C3E50, #18BC9C);
+  background-size: 300% 100%;
+  background-position: 0% 50%;
+  animation: heroBorderMove 5s linear infinite;
+  z-index: -2;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+}
+
+/* Constant shine animation */
+.hero-glow-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 5%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+  transform: skewX(-45deg);
+  z-index: 1;
+  animation: heroShineMove 2.5s linear infinite;
+}
+
+/* Keyframes */
+@keyframes heroBorderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 300% 50%;
+  }
+}
+
+@keyframes heroShineMove {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 130%;
+  }
+}
