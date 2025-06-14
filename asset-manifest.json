@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Govexi/static/css/main.9e0eab27.css",
+    "main.js": "/Govexi/static/js/main.917db52c.js",
+    "static/js/453.fb397b17.chunk.js": "/Govexi/static/js/453.fb397b17.chunk.js",
+    "static/media/Project-1.png": "/Govexi/static/media/Project-1.d664410d94b7a2ffc0c7.png",
+    "static/media/Healthcare.png": "/Govexi/static/media/Healthcare.365d9334abedb592e311.png",
+    "static/media/Fintech.png": "/Govexi/static/media/Fintech.3d7e586a686bca8f08ec.png",
+    "static/media/RealEstate.png": "/Govexi/static/media/RealEstate.887c2327ff6d641fba87.png",
+    "static/media/Food.png": "/Govexi/static/media/Food.d66135e5e45454b2a754.png",
+    "static/media/E-commerce.png": "/Govexi/static/media/E-commerce.c954dc3bdf1f67d9f0c7.png",
+    "static/media/Project-2.png": "/Govexi/static/media/Project-2.e1608d5d35b35e81a369.png",
+    "static/media/Project-4.png": "/Govexi/static/media/Project-4.7bf1f4639a2d7f602e69.png",
+    "static/media/Project-3.png": "/Govexi/static/media/Project-3.541390c682e28eb70d52.png",
+    "static/media/logo.svg": "/Govexi/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Govexi/index.html",
+    "main.9e0eab27.css.map": "/Govexi/static/css/main.9e0eab27.css.map",
+    "main.917db52c.js.map": "/Govexi/static/js/main.917db52c.js.map",
+    "453.fb397b17.chunk.js.map": "/Govexi/static/js/453.fb397b17.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9e0eab27.css",
+    "static/js/main.917db52c.js"
+  ]
+}
